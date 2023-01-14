@@ -8,10 +8,12 @@ import com.nandaadisaputra.pagination.api.QuoteResponseItem
 
 @Database(
     entities = [QuoteResponseItem::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class QuoteDatabase : RoomDatabase() {
+
+    abstract fun quoteDao(): QuoteDao
 
     companion object {
         @Volatile
