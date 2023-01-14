@@ -7,13 +7,14 @@ import androidx.room.RoomDatabase
 import com.nandaadisaputra.pagination.api.QuoteResponseItem
 
 @Database(
-    entities = [QuoteResponseItem::class],
-    version = 2,
+    entities = [QuoteResponseItem::class, RemoteKeys::class],
+    version = 3,
     exportSchema = false
 )
 abstract class QuoteDatabase : RoomDatabase() {
 
     abstract fun quoteDao(): QuoteDao
+    abstract fun remoteKeysDao(): RemoteKeysDao
 
     companion object {
         @Volatile
