@@ -14,6 +14,8 @@ import com.nandaadisaputra.pagination.data.constant.Const
 )
 abstract class QuoteDatabase : RoomDatabase() {
 
+    abstract fun quoteDao(): QuoteDao
+
     companion object {
         @Volatile
         private var INSTANCE: QuoteDatabase? = null

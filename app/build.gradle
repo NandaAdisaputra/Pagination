@@ -42,9 +42,14 @@ android {
 }
 
 dependencies {
+
     //Core Crocodic
     implementation 'com.github.crocodic-studio:AndroidCoreProject:4.0.7'
     implementation 'com.github.yzzzd:androidcore-lite:1.0.0'
+
+    //Room Paging
+    implementation 'androidx.room:room-paging:2.5.0'
+    
     //Firebase
     implementation platform('com.google.firebase:firebase-bom:31.0.2')
     implementation 'com.google.firebase:firebase-crashlytics'
