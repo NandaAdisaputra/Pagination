@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.nandaadisaputra.pagination.api.QuoteResponseItem
-import com.nandaadisaputra.pagination.data.QuoteDao
 
 @Database(
     entities = [QuoteResponseItem::class],
@@ -13,8 +12,6 @@ import com.nandaadisaputra.pagination.data.QuoteDao
     exportSchema = false
 )
 abstract class QuoteDatabase : RoomDatabase() {
-
-    abstract fun quoteDao(): QuoteDao
 
     companion object {
         @Volatile
