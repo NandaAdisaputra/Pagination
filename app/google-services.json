@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "292946192371",
+    "project_id": "latihan-dicoding-b3f68",
+    "storage_bucket": "latihan-dicoding-b3f68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292946192371:android:4b13c94c4234d465471486",
+        "android_client_info": {
+          "package_name": "com.nandaadisaputra.mysimplecleanarchitecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292946192371-5guir545r68eoo80svhqaqchksljqt56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr33a8BXnIiKfnnbgqRu60k0CFKGfGLi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292946192371-5guir545r68eoo80svhqaqchksljqt56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292946192371:android:30c4158955cdf380471486",
+        "android_client_info": {
+          "package_name": "com.nandaadisaputra.pagination"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292946192371-5guir545r68eoo80svhqaqchksljqt56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr33a8BXnIiKfnnbgqRu60k0CFKGfGLi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292946192371-5guir545r68eoo80svhqaqchksljqt56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,30 +1,22 @@
 package com.nandaadisaputra.pagination.ui
 
 import android.os.Bundle
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.nandaadisaputra.pagination.R
 import com.nandaadisaputra.pagination.adapter.LoadingStateAdapter
 import com.nandaadisaputra.pagination.adapter.QuoteListAdapter
+import com.nandaadisaputra.pagination.api.QuoteResponseItem
+import com.nandaadisaputra.pagination.base.activity.BaseActivity
 import com.nandaadisaputra.pagination.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-    private val mainViewModel: MainViewModel by viewModels {
-        ViewModelFactory(this)
-    }
-
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         binding.rvQuote.layoutManager = LinearLayoutManager(this)
-
         getData()
     }
-
     private fun getData() {
         val adapter = QuoteListAdapter()
         binding.rvQuote.adapter = adapter.withLoadStateFooter(
@@ -32,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 adapter.retry()
             }
         )
-        mainViewModel.quote.observe(this) {
+        viewModel.quote.observe(this) {
             adapter.submitData(lifecycle, it)
         }
     }

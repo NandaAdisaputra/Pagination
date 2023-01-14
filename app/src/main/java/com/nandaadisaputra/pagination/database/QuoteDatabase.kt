@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.nandaadisaputra.pagination.api.QuoteResponseItem
+import com.nandaadisaputra.pagination.data.constant.Const
 
 @Database(
     entities = [QuoteResponseItem::class],
@@ -22,7 +23,7 @@ abstract class QuoteDatabase : RoomDatabase() {
             return INSTANCE ?: synchronized(this) {
                 INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
-                    QuoteDatabase::class.java, "quote_database"
+                    QuoteDatabase::class.java, Const.DATABASE.APP
                 )
                     .fallbackToDestructiveMigration()
                     .build()

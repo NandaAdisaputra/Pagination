@@ -1,24 +1,20 @@
 package com.nandaadisaputra.pagination.ui
 
-import android.content.Context
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.nandaadisaputra.pagination.api.QuoteResponseItem
+import com.nandaadisaputra.pagination.base.viewmodel.BaseViewModel
 import com.nandaadisaputra.pagination.data.QuoteRepository
-import com.nandaadisaputra.pagination.di.Injection
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel(quoteRepository: QuoteRepository) : ViewModel() {
 
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val quoteRepository: QuoteRepository
+) : BaseViewModel() {
     val quote: LiveData<PagingData<QuoteResponseItem>> =
         quoteRepository.getQuote().cachedIn(viewModelScope)
-}
-class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return MainViewModel(Injection.provideRepository(context)) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
 }
